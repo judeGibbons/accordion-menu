@@ -50,12 +50,10 @@ table {
 /* ==== end of reset ==== */
 
 
-
-
 /* ==== main content and layout ==== */
 
 nav {
-	width: 170px;
+	width: 14.1666666em; /* 170px */
 	border-top: 2px solid #808080;
 	border-right: 2px solid #808080;
 }
@@ -69,43 +67,39 @@ nav li {
 }
 
 nav a {
-	height: 24px;
-	line-height: 24px;
+	height: 2em; /* 24px */;
+	line-height: 2em;
 	display: block;
 }
 
 nav ul.level1 > li > a {
-	height: 28px;
-	line-height: 28px;
+	height: 2.33333333em; /* 28px */
+	line-height: 2.33333333em;
 	background-color: #fbfbf9;
 	border-top: 1px solid #fff;
 	border-bottom: 1px solid #e7e7da;
-	padding-left: 32px;
+	padding-left: 2.66666667em; /* 32px */
 }
 
 nav ul.level2 > li > a {
 	border-bottom: 1px dotted #e7e7da;
-	padding-left: 20px;
+	padding-left: 1.66666667em; /* 20px */
 }
 
 nav ul.level3 > li > a {
-	padding-left: 30px;
+	padding-left: 2.5em; /* 30px */
 }
 
 nav ul.level4 > li > a {
-	padding-left: 40px;
+	padding-left: 3.3333333em; /* 40px */
 }
 
 nav ul.level5 > li > a {
-	padding-left: 50px;
+	padding-left: 4.16666667em; /* 50px */
 }
 
 
 /* hiding the inactive menus */
-
-nav li.red { /TEMP*/
-	border: 1px solid red;
-}
 
 nav li.inactive > ul { 
 	height: 0px;
@@ -120,10 +114,7 @@ nav ul > li.inactive > ul:before {
 }
 
 
-
-
 /* ==== type ==== */
-
 
 nav {
 	font-family: "Segoe UI", "Lucida Grande", "Helvetica Neue", Arial, sans-serif;
@@ -135,29 +126,16 @@ nav a {
 	text-decoration: none;
 }
 
-nav a:visited {
-	color: #660099;
-}
-
 nav a:hover, nav a:focus {
 	text-decoration: underline;
-}
-
-nav a:active {
-	color: #990033;
 }
 
 nav a[href="#"]:hover, nav a[href="#"]:focus { /* only for ones that ARE links */
 	text-decoration: none;
 }
 
-nav a[href="#"]:active { /* only for ones that ARE links */
-	color: inherit;
-}
 
 /* ==== icons and logos ==== */
-
-/* level1 menu icons, need positioning individually */
 
 nav ul.level1 > li > a:before {
 	content: '';
@@ -168,62 +146,60 @@ nav ul.level1 > li > a:before {
 	position: absolute;
 	left: 0;
 	margin-right: 4px;
+	background: url('../images/icon-sprite.png') no-repeat #ececea;
 }
 
 nav ul.level1 > li.crm > a:before {
-	background: url('../images/icon-sprite.png') no-repeat 0 0 #ececea;
+	background-position: 0 0;
 }
 
 nav ul.level1 > li.vehicles > a:before {
-	background: url('../images/icon-sprite.png') no-repeat -16px 0 #ececea;
+	background-position: -16px 0;
 }
 
 nav ul.level1 > li.showroom > a:before {
-	background: url('../images/icon-sprite.png') no-repeat -32px 0 #ececea;
+	background-position: -32px 0;
 }
 
 nav ul.level1 > li.workshop > a:before {
-	background: url('../images/icon-sprite.png') no-repeat -48px 0 #ececea;
+	background-position: -48px 0;
 }
 
 nav ul.level1 > li.time_management > a:before {
-	background: url('../images/icon-sprite.png') no-repeat 0 -16px #ececea;
+	background-position: 0 -16px;
 }
 
 nav ul.level1 > li.parts > a:before {
-	background: url('../images/icon-sprite.png') no-repeat -16px -16px #ececea;
+	background-position: -16px -16px;
 }
 
 nav ul.level1 > li.accounts > a:before {
-	background: url('../images/icon-sprite.png') no-repeat -32px -16px #ececea;
+	background-position: -32px -16px;
 }
 
 nav ul.level1 > li.epos > a:before {
-	background: url('../images/icon-sprite.png') no-repeat -16px -16px #ececea;
+	background-position: -16px -16px;
 }
 
 nav ul.level1 > li.purchase_orders > a:before {
-	background: url('../images/icon-sprite.png') no-repeat -48px -16px #ececea;
+	background-position: -48px -16px;
 }
 
 nav ul.level1 > li.call_centre > a:before {
-	background: url('../images/icon-sprite.png') no-repeat 0 -32px #ececea;
+	background-position: 0 -32px;
 }
 
 nav ul.level1 > li.edition > a:before {
-	background: url('../images/icon-sprite.png') no-repeat -16px -32px #ececea;
+	background-position: -16px -32px;
 }
 
 nav ul.level1 > li.administration > a:before {
-	background: url('../images/icon-sprite.png') no-repeat -32px -32px #ececea;
+	background-position: -32px -32px;
 }
 
 nav ul.level1 > li.datapoint > a:before {
-	background: url('../images/icon-sprite.png') no-repeat -48px -32px #ececea;
+	background-position: -48px -32px;
 }
-
-/* menu toggle arrows, need positioning individually for each level -
-can i do this programatically with SASS?  */
 
 nav ul > li > ul:before {
 	content: '';
@@ -235,22 +211,22 @@ nav ul > li > ul:before {
 }
 
 nav ul > li > ul:before {
-	top: 7px;
+	top: 0.58333333em; /* 7px */
 }
 
 nav ul.level1 > li > ul:before {
-	right: 7px;
-	top: 10px;
+	right: 0.58333333em; /* 7px */
+	top: 0.83333333em; /* 10px */
 }
 
 nav ul.level2 > li > ul:before {
-	left: 10px;
+	left: 0.83333333em; /* 10px */
 }
 
 nav ul.level3 > li > ul:before {
-	left: 20px;
+	left: 1.66666667em; /* 20px */
 }
 
 nav ul.level4 > li > ul:before {
-	left: 30px;
+	left: 2.5em; /* 30px */
 }
