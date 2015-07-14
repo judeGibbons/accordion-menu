@@ -1,5 +1,12 @@
 #Accordion menu created from static png provided.
 
+Moving on to the next stage, I have added css transitions to make the menus 
+open and close smoothly rather than just appear. The transitions are a 
+progressive enhancement feature so I haven't inserted browser prefixes which 
+means that only IE10+ and modern browsers (other than Opera Mini and 
+Android 4.4) are supported. (There are still some minor bugs with the 
+implementation.)
+
 I have made the assumption that, if a triangle icon appears next to a menu 
 item, that item contains a submenu but is not a link to a page itself, and 
 if the icon doesn't appear then that item is a link to a page. This means 
@@ -7,7 +14,8 @@ that a click on that menu item will either go to a link, or it will open a
 submenu, and it doesn't need to do both. I've taken that approach here, but 
 the real example may need the functionality to do both: you could have a 
 click on the menu text taking you to the new page and a click on the triangle 
-icon opening or closing the submenu, but this isn't ideal as the triangle icon is a very small target.
+icon opening or closing the submenu, but this isn't ideal as the triangle icon 
+is a very small target.
 
 The triangle icon, showing if a menu is open or closed, isn't part of the 
 anchor link so if you click on the icon itself it doesn't activate the menu. 
@@ -33,5 +41,3 @@ versions of IE.
 I didn't use Sass on this project but it could help in creating variables for 
 each of the colours used in the menu, and for setting the padding and icon 
 position in regular steps on each of the nested submenus.
-
-The next stage is to add css transitions to make the menus open and close smoothly rather than just appear.

@@ -50,6 +50,8 @@ table {
 /* ==== end of reset ==== */
 
 
+
+
 /* ==== main content and layout ==== */
 
 nav {
@@ -66,15 +68,7 @@ nav li {
 	position: relative;
 }
 
-nav a {
-	height: 2em; /* 24px */;
-	line-height: 2em;
-	display: block;
-}
-
 nav ul.level1 > li > a {
-	height: 2.33333333em; /* 28px */
-	line-height: 2.33333333em;
 	background-color: #fbfbf9;
 	border-top: 1px solid #fff;
 	border-bottom: 1px solid #e7e7da;
@@ -98,19 +92,46 @@ nav ul.level5 > li > a {
 	padding-left: 4.16666667em; /* 50px */
 }
 
+/* hiding and transitioning the inactive menus */
 
-/* hiding the inactive menus */
-
-nav li.inactive > ul { 
-	height: 0px;
+nav li a { /* need this in case of non-js */
+	max-height: 2em; /* 24px */;
+	line-height: 2em;
+	display: block;
 }
 
-nav li.inactive > ul > li {
-	display: none; 
+nav ul.level1 > li > a  {
+	height: 2.33333333em; /* 28px */
+	max-height: 2.33333333em; /* 28px */
+	line-height: 2.33333333em; /* 28px */
 }
 
-nav ul > li.inactive > ul:before {
-	background: url('../images/arrow-sprite.png') no-repeat 0 0;
+nav li.inactive > ul > li.inactive > a {
+	max-height: 0px;
+	border-bottom-width: 0;
+	opacity: 0;
+	transition: all 0.2s ease-in;
+}
+
+nav li.active > ul > li.inactive > a {
+	max-height: 2em; /* 24px */;
+	border-bottom-width: 1px;
+	opacity: 1;
+	transition: all 0.2s ease-out;
+}
+
+nav li.active li.inactive li.inactive  {
+	visibility: hidden;
+}
+
+nav li.initial li {
+	display: none;
+}
+/*this breaks no-js version - need to do this with a no-js class on body and remove*/
+
+
+nav ul > li.active > ul:before {
+	background: url('../images/arrow-sprite.png') no-repeat 0 -8px;
 }
 
 
@@ -134,8 +155,8 @@ nav a[href="#"]:hover, nav a[href="#"]:focus { /* only for ones that ARE links *
 	text-decoration: none;
 }
 
-
 /* ==== icons and logos ==== */
+
 
 nav ul.level1 > li > a:before {
 	content: '';
@@ -206,7 +227,7 @@ nav ul > li > ul:before {
 	width: 6px;
 	height: 8px;
 	display: inline-block;
-	background: url('../images/arrow-sprite.png') no-repeat 0 -8px;
+	background: url('../images/arrow-sprite.png') no-repeat 0 0;
 	position: absolute;
 }
 
